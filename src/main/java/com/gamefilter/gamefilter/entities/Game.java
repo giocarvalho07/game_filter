@@ -1,7 +1,7 @@
 package com.gamefilter.gamefilter.entities;
 
-import com.gamefilter.gamefilter.entities.enums.Platform;
 
+import com.gamefilter.gamefilter.entities.enums.Platform;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -18,9 +18,11 @@ public class Game implements Serializable {
     private String title;
     private Platform platform;
 
+
     @ManyToOne
     @JoinColumn(name = "genre_id")
     private Genre genre;
+
 
     @OneToMany(mappedBy = "game")
     private List<Record> records = new ArrayList<>();
